@@ -1,0 +1,56 @@
+package jp;
+
+import java.util.Scanner;
+
+public class q5 {
+	public static void main(String args[])
+	{
+		Scanner scan = new Scanner(System.in);
+		String s = scan.nextLine();
+		int i = 0;
+		String[] al = new String[Integer.parseInt(s)];
+		while (i < Integer.parseInt(s))
+		{
+			al[i] = scan.nextLine();
+			i++;
+		}
+		int j = 0;
+		while (j < Integer.parseInt(s))
+		{
+			boolean bl = false;
+			bl = (al[j].substring(al[j].length() -2 , al[j].length() -1 ).equals("a") ||
+					al[j].substring(al[j].length() -2 , al[j].length() -1 ).equals("i") ||
+					al[j].substring(al[j].length() -2 , al[j].length() -1 ).equals("u") ||
+					al[j].substring(al[j].length() -2 , al[j].length() -1 ).equals("e") ||
+					al[j].substring(al[j].length() -2 , al[j].length() -1 ).equals("o") );
+			
+			if(al[j].endsWith("e"))
+			{
+				System.out.println(al[j] + "d");
+			}
+			else if(!bl
+					&& al[j].endsWith("y"))
+			{
+				String t = al[j].substring(0 , al[j].length() - 1);
+				t = t.concat("ied");
+				System.out.println(t);
+			}
+			else if(bl
+					&&
+					(!al[j].endsWith("a") ||
+							!al[j].endsWith("i") ||
+							!al[j].endsWith("u") ||
+							!al[j].endsWith("e") ||
+							!al[j].endsWith("o")) )
+			{
+				System.out.println(al[j] + "ed");
+			}
+			else
+			{
+				System.out.println(al[j] + "ed");
+			}
+			j++;
+		}
+	}
+
+}
