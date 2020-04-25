@@ -10,6 +10,7 @@ public class q4 {
 		Scanner scan = new Scanner(System.in);
 		String s = scan.nextLine();
 		String[] date = s.split("/");
+		System.out.println("aa");
 
 
 		Calendar cal = Calendar.getInstance();
